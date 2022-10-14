@@ -2,4 +2,9 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 
-createApp(App).use(router).mount('#app')
+import Vuex from 'vuex'
+import store from './store'
+
+createApp(App).use(router)
+.use(Vuex).use(store)
+.mount('#app')
