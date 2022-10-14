@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomePage from '@/pages/HomePage.vue'
-import CatalogPage from '@/pages/CatalogPage.vue'
+import CategoryPage from '@/pages/CategoryPage.vue'
 
 const routes = [
   {
@@ -11,7 +11,13 @@ const routes = [
   {
     path: '/catalog',
     name: 'catalog',
-    component: CatalogPage
+    component: HomePage
+    // component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+  },
+  {
+    path: '/catalog/:catUrl+',
+    name: 'category',
+    component: CategoryPage
     // component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
   },
   { path: '/:catchAll(.*)', redirect: '/' },
