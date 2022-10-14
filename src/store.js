@@ -1,17 +1,20 @@
 import Vuex from 'vuex'
 import VuexORM from '@vuex-orm/core'
 
-import Catalog from '@/store/Catalog.js'
+import Category from '@/store/Category.js'
+import CategoryParent from '@/store/CategoryParent.js'
 
 // Create a new instance of Database.
 const database = new VuexORM.Database()
 
 // Register Models to Database.
-database.register(Catalog)
+database.register(Category)
+database.register(CategoryParent)
 
 const getters = {
     // api: () => api,
-    catalog: () => Catalog,
+    category: () => Category,
+    categoryParents: () => CategoryParent,
 }
 
 // Create Vuex Store and register database through Vuex ORM.
